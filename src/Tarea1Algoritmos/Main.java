@@ -184,8 +184,8 @@ public class Main {
 						if(acceptableError(BFsum, iterations) 
 							&& acceptableError(BFtime, iterations) || iterations >= max_it){
 						printer.println("BF Iterations: "+iterations);
-						printer.println("BFtime: "+BFtime.getMean()+"\t"+BFtime.getVariance()+"\t"+BFtime.getStandardDeviation());
-						printer.println("BFsum"+BFsum.getMean()+"\t"+BFsum.getVariance()+"\t"+BFsum.getStandardDeviation());
+						printer.println("BFtime:\t"+BFtime.getMean()+"\t"+BFtime.getVariance()+"\t"+BFtime.getStandardDeviation());
+						printer.println("BFsum:\t"+BFsum.getMean()+"\t"+BFsum.getVariance()+"\t"+BFsum.getStandardDeviation());
 						break;
 					}
 				}
@@ -210,8 +210,8 @@ public class Main {
 					if(acceptableError(KMPsum, iterations) 
 							&& acceptableError(KMPtime, iterations) || iterations >= max_it){
 						printer.println("KMP Iterations: "+iterations);
-						printer.println("KMPtime: "+KMPtime.getMean()+"\t"+KMPtime.getVariance()+"\t"+KMPtime.getStandardDeviation());
-						printer.println("KMPsum: "+KMPsum.getMean()+"\t"+KMPtime.getVariance()+"\t"+KMPtime.getStandardDeviation());
+						printer.println("KMPtime:\t"+KMPtime.getMean()+"\t"+KMPtime.getVariance()+"\t"+KMPtime.getStandardDeviation());
+						printer.println("KMPsum:\t"+KMPsum.getMean()+"\t"+KMPtime.getVariance()+"\t"+KMPtime.getStandardDeviation());
 						break;
 					}
 				}
@@ -233,11 +233,11 @@ public class Main {
 						System.err.println("Error comps: "+((2*BMHsum.getStandardDeviation())/
 								Math.sqrt(iterations))+" comps.");
 					}
-					if(acceptableError(KMPsum, iterations) 
-							&& acceptableError(KMPtime, iterations) || iterations >= max_it){
-						printer.println("KMP Iterations: "+iterations);
-						printer.println("KMPtime: "+BMHtime.getMean()+"\t"+BMHtime.getVariance()+"\t"+BMHtime.getStandardDeviation());
-						printer.println("KMPsum: "+BMHsum.getMean()+"\t"+BMHtime.getVariance()+"\t"+BMHtime.getStandardDeviation());
+					if(acceptableError(BMHsum, iterations) 
+							&& acceptableError(BMHtime, iterations) || iterations >= max_it){
+						printer.println("BMH Iterations: "+iterations);
+						printer.println("BMHtime:\t"+BMHtime.getMean()+"\t"+BMHtime.getVariance()+"\t"+BMHtime.getStandardDeviation());
+						printer.println("BMHsum:\t"+BMHsum.getMean()+"\t"+BMHtime.getVariance()+"\t"+BMHtime.getStandardDeviation());
 						break;
 					}
 				}
@@ -283,8 +283,8 @@ public class Main {
 					if(acceptableError(BFsum, iterations) 
 							&& acceptableError(BFtime, iterations) || iterations >= max_it){
 						printer.println("BF Iterations: "+iterations);
-						printer.println("BFtime: "+BFtime.getMean()+"\t"+BFtime.getVariance()+"\t"+BFtime.getStandardDeviation());
-						printer.println("BFsum"+BFsum.getMean()+"\t"+BFsum.getVariance()+"\t"+BFsum.getStandardDeviation());
+						printer.println("BFtime:\t"+BFtime.getMean()+"\t"+BFtime.getVariance()+"\t"+BFtime.getStandardDeviation());
+						printer.println("BFsum:\t"+BFsum.getMean()+"\t"+BFsum.getVariance()+"\t"+BFsum.getStandardDeviation());
 						break;
 					}
 				}
@@ -309,8 +309,8 @@ public class Main {
 					if(acceptableError(BFsum, iterations) 
 							&& acceptableError(BFtime, iterations) || iterations >= max_it){
 						printer.println("KMP Iterations: "+iterations);
-						printer.println("KMPtime: "+KMPtime.getMean()+"\t"+KMPtime.getVariance()+"\t"+KMPtime.getStandardDeviation());
-						printer.println("KMPsum"+KMPsum.getMean()+"\t"+KMPsum.getVariance()+"\t"+KMPsum.getStandardDeviation());
+						printer.println("KMPtime:\t"+KMPtime.getMean()+"\t"+KMPtime.getVariance()+"\t"+KMPtime.getStandardDeviation());
+						printer.println("KMPsum:\t"+KMPsum.getMean()+"\t"+KMPsum.getVariance()+"\t"+KMPsum.getStandardDeviation());
 						break;
 					}
 				}
@@ -335,8 +335,8 @@ public class Main {
 					if(acceptableError(BFsum, iterations) 
 							&& acceptableError(BFtime, iterations) || iterations >= max_it){
 						printer.println("BMH Iterations: "+iterations);
-						printer.println("BMHtime: "+BMHtime.getMean()+"\t"+BMHtime.getVariance()+"\t"+BMHtime.getStandardDeviation());
-						printer.println("BMHsum"+BMHsum.getMean()+"\t"+BMHsum.getVariance()+"\t"+BMHsum.getStandardDeviation());
+						printer.println("BMHtime:\t"+BMHtime.getMean()+"\t"+BMHtime.getVariance()+"\t"+BMHtime.getStandardDeviation());
+						printer.println("BMHsum:\t"+BMHsum.getMean()+"\t"+BMHsum.getVariance()+"\t"+BMHsum.getStandardDeviation());
 						break;
 					}
 				}
@@ -348,6 +348,7 @@ public class Main {
 		// test fake DNA
 		if (cmd.hasOption("fd")) {
 			fakeDNA = init("fakeDNA.txt");
+			printer.println("Fake DNA Text");
 			GenericTextSearch brute = new BruteForceSearch(fakeDNA);
 			GenericTextSearch kmp = new KnuthMorrisPrattSearch(fakeDNA);
 			GenericTextSearch bmh = new BoyerMooreHorspoolSearch(fakeDNA);
@@ -381,8 +382,8 @@ public class Main {
 					if(acceptableError(BFsum, iterations) 
 							&& acceptableError(BFtime, iterations) || iterations >= max_it){
 						printer.println("BF Iterations: "+iterations);
-						printer.println("BFtime: "+BFtime.getMean()+"\t"+BFtime.getVariance()+"\t"+BFtime.getStandardDeviation());
-						printer.println("BFsum"+BFsum.getMean()+"\t"+BFsum.getVariance()+"\t"+BFsum.getStandardDeviation());
+						printer.println("BFtime:\t"+BFtime.getMean()+"\t"+BFtime.getVariance()+"\t"+BFtime.getStandardDeviation());
+						printer.println("BFsum:\t"+BFsum.getMean()+"\t"+BFsum.getVariance()+"\t"+BFsum.getStandardDeviation());
 						break;
 					}
 				}
@@ -404,11 +405,11 @@ public class Main {
 						System.err.println("Error comps: "+((2*KMPsum.getStandardDeviation())/
 								Math.sqrt(iterations))+" comps.");
 					}
-					if(acceptableError(BFsum, iterations) 
-							&& acceptableError(BFtime, iterations) || iterations >= max_it){
+					if(acceptableError(KMPsum, iterations) 
+							&& acceptableError(KMPtime, iterations) || iterations >= max_it){
 						printer.println("KMP Iterations: "+iterations);
-						printer.println("KMPtime: "+KMPtime.getMean()+"\t"+KMPtime.getVariance()+"\t"+KMPtime.getStandardDeviation());
-						printer.println("KMPsum"+KMPsum.getMean()+"\t"+KMPsum.getVariance()+"\t"+KMPsum.getStandardDeviation());
+						printer.println("KMPtime:\t"+KMPtime.getMean()+"\t"+KMPtime.getVariance()+"\t"+KMPtime.getStandardDeviation());
+						printer.println("KMPsum:\t"+KMPsum.getMean()+"\t"+KMPsum.getVariance()+"\t"+KMPsum.getStandardDeviation());
 						break;
 					}
 				}
@@ -430,11 +431,11 @@ public class Main {
 						System.err.println("Error comps: "+((2*BMHsum.getStandardDeviation())/
 								Math.sqrt(iterations))+" comps.");
 					}
-					if(acceptableError(BFsum, iterations) 
-							&& acceptableError(BFtime, iterations) || iterations >= max_it){
+					if(acceptableError(BMHsum, iterations) 
+							&& acceptableError(BMHtime, iterations) || iterations >= max_it){
 						printer.println("BMH Iterations: "+iterations);
-						printer.println("BMHtime: "+BMHtime.getMean()+"\t"+BMHtime.getVariance()+"\t"+BMHtime.getStandardDeviation());
-						printer.println("BMHsum"+BMHsum.getMean()+"\t"+BMHsum.getVariance()+"\t"+BMHsum.getStandardDeviation());
+						printer.println("BMHtime:\t"+BMHtime.getMean()+"\t"+BMHtime.getVariance()+"\t"+BMHtime.getStandardDeviation());
+						printer.println("BMHsum:\t"+BMHsum.getMean()+"\t"+BMHsum.getVariance()+"\t"+BMHsum.getStandardDeviation());
 						break;
 					}
 				}
@@ -445,6 +446,7 @@ public class Main {
 		// test plain text
 		if (cmd.hasOption("pt")) {
 			plaintext = init("plainText.txt");
+			printer.println("Plain Text");			
 			GenericTextSearch brute = new BruteForceSearch(plaintext);
 			GenericTextSearch kmp = new KnuthMorrisPrattSearch(plaintext);
 			GenericTextSearch bmh = new BoyerMooreHorspoolSearch(plaintext);
@@ -478,8 +480,8 @@ public class Main {
 					if(acceptableError(BFsum, iterations) 
 							&& acceptableError(BFtime, iterations) || iterations >= max_it){
 						printer.println("BF Iterations: "+iterations);
-						printer.println("BFtime: "+BFtime.getMean()+"\t"+BFtime.getVariance()+"\t"+BFtime.getStandardDeviation());
-						printer.println("BFsum"+BFsum.getMean()+"\t"+BFsum.getVariance()+"\t"+BFsum.getStandardDeviation());
+						printer.println("BFtime:\t"+BFtime.getMean()+"\t"+BFtime.getVariance()+"\t"+BFtime.getStandardDeviation());
+						printer.println("BFsum:\t"+BFsum.getMean()+"\t"+BFsum.getVariance()+"\t"+BFsum.getStandardDeviation());
 						break;
 					}
 				}
@@ -503,11 +505,9 @@ public class Main {
 					}
 					if(acceptableError(KMPsum, iterations) 
 							&& acceptableError(KMPtime, iterations) || iterations >= max_it){
-						System.err.println("Resultados plainText KMP");
-						System.err.println("Promedio tiempo: "+(KMPtime.getMean()/1000)+" seg.");
-						System.err.println("DEstandar tiempo: "+(KMPtime.getStandardDeviation()/1000)+" seg.");
-						System.err.println("Promedio comps: "+(KMPtime.getMean()/1000)+" seg.");
-						System.err.println("DEstandar comps: "+(KMPtime.getMean()/1000)+" seg.");
+						printer.println("KMP Iterations: "+iterations);
+						printer.println("KMPtime:\t"+KMPtime.getMean()+"\t"+KMPtime.getVariance()+"\t"+KMPtime.getStandardDeviation());
+						printer.println("KMPsum:\t"+KMPsum.getMean()+"\t"+KMPsum.getVariance()+"\t"+KMPsum.getStandardDeviation());
 						break;
 					}
 				}
@@ -529,11 +529,11 @@ public class Main {
 						System.err.println("Error comps: "+((2*BMHsum.getStandardDeviation())/
 								Math.sqrt(iterations))+" comps.");
 					}
-					if(acceptableError(BFsum, iterations) 
-							&& acceptableError(BFtime, iterations) || iterations >= max_it){
+					if(acceptableError(BMHsum, iterations) 
+							&& acceptableError(BMHtime, iterations) || iterations >= max_it){
 						printer.println("BMH Iterations: "+iterations);
-						printer.println("BMHtime: "+BMHtime.getMean()+"\t"+BMHtime.getVariance()+"\t"+BMHtime.getStandardDeviation());
-						printer.println("BMHsum"+BMHsum.getMean()+"\t"+BMHsum.getVariance()+"\t"+BMHsum.getStandardDeviation());
+						printer.println("BMHtime:\t"+BMHtime.getMean()+"\t"+BMHtime.getVariance()+"\t"+BMHtime.getStandardDeviation());
+						printer.println("BMHsum:\t"+BMHsum.getMean()+"\t"+BMHsum.getVariance()+"\t"+BMHsum.getStandardDeviation());
 						break;
 					}
 				}
@@ -545,6 +545,7 @@ public class Main {
 		// test fake Text
 		if (cmd.hasOption("ft")) {
 			faketext = init("fakeText.txt");
+			printer.println("Fake Text");
 			GenericTextSearch brute = new BruteForceSearch(faketext);
 			GenericTextSearch kmp = new KnuthMorrisPrattSearch(faketext);
 			GenericTextSearch bmh = new BoyerMooreHorspoolSearch(faketext);
@@ -578,8 +579,8 @@ public class Main {
 					if(acceptableError(BFsum, iterations) 
 							&& acceptableError(BFtime, iterations) || iterations >= max_it){
 						printer.println("BF Iterations: "+iterations);
-						printer.println("BFtime: "+BFtime.getMean()+"\t"+BFtime.getVariance()+"\t"+BFtime.getStandardDeviation());
-						printer.println("BFsum"+BFsum.getMean()+"\t"+BFsum.getVariance()+"\t"+BFsum.getStandardDeviation());
+						printer.println("BFtime:\t"+BFtime.getMean()+"\t"+BFtime.getVariance()+"\t"+BFtime.getStandardDeviation());
+						printer.println("BFsum:\t"+BFsum.getMean()+"\t"+BFsum.getVariance()+"\t"+BFsum.getStandardDeviation());
 						break;
 					}
 				}
@@ -603,11 +604,9 @@ public class Main {
 					}
 					if(acceptableError(KMPsum, iterations) 
 							&& acceptableError(KMPtime, iterations) || iterations >= max_it){
-						System.err.println("Resultados FakeText KMP");
-						System.err.println("Promedio tiempo: "+(KMPtime.getMean()/1000)+" seg.");
-						System.err.println("DEstandar tiempo: "+(KMPtime.getStandardDeviation()/1000)+" seg.");
-						System.err.println("Promedio comps: "+(KMPtime.getMean()/1000)+" seg.");
-						System.err.println("DEstandar comps: "+(KMPtime.getMean()/1000)+" seg.");
+						printer.println("KMP Iterations: "+iterations);
+						printer.println("KMPtime:\t"+KMPtime.getMean()+"\t"+KMPtime.getVariance()+"\t"+KMPtime.getStandardDeviation());
+						printer.println("KMPsum:\t"+KMPsum.getMean()+"\t"+KMPsum.getVariance()+"\t"+KMPsum.getStandardDeviation());
 						break;
 					}
 				}
@@ -617,13 +616,23 @@ public class Main {
 					t = System.currentTimeMillis();
 					BMHsum.addValue((double)(bmh.search(patron)));
 					BMHtime.addValue((double)(System.currentTimeMillis() - t));
-					if(acceptableError(BMHsum, iterations) 
-							&& acceptableError(BMHtime, iterations) || iterations >= max_it){
-						System.err.println("Resultados FakeText BMH");
+					if(iterations%10000 == 0){
+						System.out.println(""+iterations);
+						System.err.println("Resultados faketext BMH");
 						System.err.println("Promedio tiempo: "+(BMHtime.getMean()/1000)+" seg.");
 						System.err.println("DEstandar tiempo: "+(BMHtime.getStandardDeviation()/1000)+" seg.");
-						System.err.println("Promedio comps: "+(BMHtime.getMean()/1000)+" seg.");
-						System.err.println("DEstandar comps: "+(BMHtime.getMean()/1000)+" seg.");
+						System.err.println("Error tiempo: "+((2*BMHtime.getStandardDeviation())/
+								Math.sqrt(iterations)*1000)+" seg.");
+						System.err.println("Promedio comps: "+(BMHsum.getMean())+" comps.");
+						System.err.println("DEstandar comps: "+(BMHsum.getStandardDeviation())+" comps.");
+						System.err.println("Error comps: "+((2*BMHsum.getStandardDeviation())/
+								Math.sqrt(iterations))+" comps.");
+					}
+					if(acceptableError(BMHsum, iterations) 
+							&& acceptableError(BMHtime, iterations) || iterations >= max_it){
+						printer.println("BMH Iterations: "+iterations);
+						printer.println("BMHtime:\t"+BMHtime.getMean()+"\t"+BMHtime.getVariance()+"\t"+BMHtime.getStandardDeviation());
+						printer.println("BMHsum:\t"+BMHsum.getMean()+"\t"+BMHsum.getVariance()+"\t"+BMHsum.getStandardDeviation());
 						break;
 					}
 				}
